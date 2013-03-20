@@ -1,6 +1,6 @@
 /*
  *
- *  inc/uRTnet/uRTnet.h - main library
+ *  inc/uRTnet.h - main library
  *
  *  Copyright (C) 2012  	Maciej Szymañski <mszymanski90@gmail.com>
  *
@@ -27,7 +27,7 @@
  * \file Prototypy funkcji interfejsu aplikacji
  */
 
-#include "hal/data_types.h"
+#include "data_types.h"
 #include "uRTnet_module.h"
 #include "rtmac.h"
 #include "tdma.h"

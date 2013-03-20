@@ -1,6 +1,6 @@
 /*
  *
- *  inc/uRTnet/uRTnet_module.h - uRTnet data structure
+ *  inc/uRTnet_module.h - uRTnet data structure
  *
  *  Copyright (C) 2012  	Maciej Szymañski <mszymanski90@gmail.com>
  *
@@ -28,7 +28,7 @@
  * uRTnet.
  */
 
-#include "hal/data_types.h"
+#include "data_types.h"
 #include "mac_addr_type.h"
 #include "config/uRTnet_config.h"
 

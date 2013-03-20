@@ -1,6 +1,6 @@
 /*
  *
- *  inc/uRTnet/rtcfg.c - RTcfg
+ *  inc/rtcfg.c - RTcfg
  *
  *  Copyright (C) 2012  	Maciej Szymañski <mszymanski90@gmail.com>
  *

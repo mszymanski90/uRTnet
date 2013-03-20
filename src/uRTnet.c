@@ -1,6 +1,6 @@
 /*
  *
- *  src/uRTnet/uRTnet.c - main library
+ *  src/uRTnet.c - main library
  *
  *  Copyright (C) 2012  	Maciej Szymañski <mszymanski90@gmail.com>
  *
@@ -24,7 +24,7 @@
  * \file Definicje funkcji interfejsu aplikacji.
  */
 
-#include "inc/uRTnet/uRTnet.h"
+#include "inc/uRTnet.h"
 
 /*!
  * Funkcja przeprowadza inicjalizacjê modu³u uRTnet. Wstêpnie inicjalizuje struktury danych

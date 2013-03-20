@@ -1,6 +1,6 @@
 /*
  *
- *  src/uRTnet/rtmac.c - RTmac
+ *  src/rtmac.c - RTmac
  *
  *  Copyright (C) 2012  	Maciej Szymañski <mszymanski90@gmail.com>
  *
@@ -24,7 +24,7 @@
  * \file Definicje funkcji RTmac
  */
 
-#include "inc/uRTnet/rtmac.h"
+#include "inc/rtmac.h"
 
 /*!
  * Inicjalizuje zmienn¹ packet_arrival_time, oraz uruchamia inicjalizacjê

@@ -1,6 +1,6 @@
 /*
  *
- *  src/uRTnet/rtcfg.c - RTcfg
+ *  src/rtcfg.c - RTcfg
  *
  *  Copyright (C) 2012  	Maciej Szymañski <mszymanski90@gmail.com>
  *
@@ -20,7 +20,7 @@
  *
  */
 
-#include "inc/uRTnet/rtcfg.h"
+#include "inc/rtcfg.h"
 
 void HandleRTcfgFrame(void)
 {

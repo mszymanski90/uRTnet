@@ -23,7 +23,7 @@
 #ifndef MAC_ADDR_TYPE_H_
 #define MAC_ADDR_TYPE_H_
 
-#include "hal/data_types.h"
+#include "data_types.h"
 
 typedef struct MAC_addr
 {

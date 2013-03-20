@@ -1,6 +1,6 @@
 /*
  *
- *  inc/hal/data_types.h - basic variable types
+ *  inc/data_types.h - basic variable types
  *
  *  Copyright (C) 2012  	Maciej Szymañski <mszymanski90@gmail.com>
  *

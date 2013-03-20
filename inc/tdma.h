@@ -1,6 +1,6 @@
 /*
  *
- *  inc/uRTnet/tdma.h - TDMA
+ *  inc/tdma.h - TDMA
  *
  *  Copyright (C) 2012  	Maciej Szymañski <mszymanski90@gmail.com>
  *
@@ -27,7 +27,7 @@
  * \file Prototypy funkcji TDMA
  */
 
-#include "hal/data_types.h"
+#include "data_types.h"
 #include "config/uRTnet_config.h"
 #include "uRTnet_module.h"
 #include "debug.h"

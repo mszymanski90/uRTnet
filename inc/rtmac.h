@@ -1,6 +1,6 @@
 /*
  *
- *  inc/uRTnet/rtmac.h - RTmac
+ *  inc/rtmac.h - RTmac
  *
  *  Copyright (C) 2012  	Maciej Szymañski <mszymanski90@gmail.com>
  *
@@ -26,8 +26,6 @@
 /*!
  * Prototypy funkcji RTmac
  */
-
-#include "debug.h"
 
 #include "config/uRTnet_config.h"
 #include "mac_addr_type.h"

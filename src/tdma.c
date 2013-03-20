@@ -1,6 +1,6 @@
 /*
  *
- *  src/uRTnet/tdma.c - TDMA
+ *  src/tdma.c - TDMA
  *
  *  Copyright (C) 2012  	Maciej Szymañski <mszymanski90@gmail.com>
  *
@@ -24,7 +24,7 @@
  * \file Definicje funkcji TDMA
  */
 
-#include "inc/uRTnet/tdma.h"
+#include "inc/tdma.h"
 
 /*!
  * Funkcja inicjalizuje zmienne modu³u TDMA. W tej funkcji
