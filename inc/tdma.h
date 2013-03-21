@@ -24,7 +24,7 @@
 #define TDMA_H_
 
 /*!
- * \file Prototypy funkcji TDMA
+ * \file TDMA function prototypes
  */
 
 #include "data_types.h"
@@ -34,57 +34,57 @@
 
 
 /*!
- * \brief Inicjalizuje TDMA
+ * \brief Initializes TDMA.
  */
 void tdma_init(uRTnet* module);
 
 /*!
- * \brief Zmienia konfiguracjê slotów [NIE ZAIMPLEMENTOWANO]
+ * \brief Changes slot configuration [NOT IMPLEMENTED].
  */
 void tdma_set_slots(uint32_t *slots_table, uint16_t slots_table_size);
 
 /*!
- * \brief Zwraca czas nastêpnego slotu (absolutny)
+ * \brief Returns next slot time (absolute).
  */
 uint64_t tdma_time_to_next_slot(uRTnet* module);
 
 /*!
- * \brief Znajduje cykl i slot w którym mo¿e przyjsc odpowiedz na ¿¹danie kalibracji
+ * \brief Finds cycle number and slot offset for calibration reply.
  */
 void tdma_find_reply_slot(uRTnet* module, int32_t *cycle_number, uint64_t *slot_offset);
 
 /*!
- * \brief Znajduje posiadany póŸniejszy ni¿ i slot w cyklu i zwraca jego offset
+ * \brief Finds next owned slot with slot id greater than i, in cycle cn.
  */
 uint64_t tdma_slot_offset_in_cycle(uRTnet* module, uint16_t i, int32_t cn);
 
 /*!
- * \brief Obs³uguje zdarzenie slotu
+ * \brief Handles slot event
  */
 void tdma_on_slot(uRTnet* module);
 
 /*!
- * \brief Obs³uguje ramkê TDMA, w szczególnosci ramkê synchronizacji
+ * \brief Handles TDMA frame
  */
 void tdma_handle_disc_frame(uRTnet* module);
 
 /*!
- * \brief Obs³uguje przyjscie odpowiedzi na ¿¹danie kalibracji
+ * \brief Handles reply calibration frame
  */
 void tdma_handle_calibration_reply_frame(uRTnet* module);
 
 /*!
- * \brief Kolejkuje ramkê do wys³ania
+ * \brief Queues frame for sending
  */
 void tdma_schedule_frame(uRTnet* module, uint8_t *data_buffer, uint16_t data_size);
 
 /*!
- * \brief Wysy³a ¿¹danie kalibracji
+ * \brief Sends calibration request frame
  */
 void tdma_send_calibration_request(uRTnet* module);
 
 /*!
- * \brief £aduje pakiet do bufora nadawczego
+ * \brief Loads packet to TX buffer
  */
 uint8_t tdma_load_packet_to_buffer(uRTnet* module, uint8_t *data_buffer, uint16_t data_size);
 

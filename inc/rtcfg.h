@@ -1,6 +1,6 @@
 /*
  *
- *  inc/rtcfg.c - RTcfg
+ *  inc/rtcfg.h - RTcfg
  *
  *  Copyright (C) 2012  	Maciej Szymañski <mszymanski90@gmail.com>
  *
