@@ -23,6 +23,13 @@
 #ifndef RTCFG_H_
 #define RTCFG_H_
 
+/*!
+ * \file RTcfg function prototypes
+ */
+
+/*!
+ * \brief Handles RTcfg frame [NOT IMPLEMENTED]
+ */
 void HandleRTcfgFrame(void);
 
 #endif /* RTCFG_H_ */

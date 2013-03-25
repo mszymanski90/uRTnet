@@ -24,7 +24,7 @@
 #define RTMAC_H_
 
 /*!
- * Prototypy funkcji RTmac
+ * \file RTmac function prototypes
  */
 
 #include "config/uRTnet_config.h"
@@ -33,17 +33,17 @@
 #include "tdma.h"
 
 /*!
- * \brief Inicjalizuje warstwê RTmac
+ * \brief Initializes RTmac layer
  */
 void rtmac_init(uRTnet* module);
 
 /*!
- * \brief Obs³uguje ramkê RTmac
+ * \brief Handles RTmac frame
  */
 void rtmac_handle_rtmac_frame(uRTnet* module);
 
 /*!
- * \brief Funkcja obs³uguj¹ca zdarzenie odbioru ramki
+ * \brief Handles frame recieve event
  */
 void rtmac_on_rx_frame(uRTnet* module);
 

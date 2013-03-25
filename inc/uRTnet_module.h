@@ -24,8 +24,7 @@
 #define URTNET_MODULE_H_
 
 /*!
- * \file Plik zawiera definicje struktur danych uRTnet_buffer, slots_table_row, oraz
- * uRTnet.
+ * \file Definitions of data structures: uRTnet_buffer, slots_table_row and uRTnet.
  */
 
 #include "data_types.h"
@@ -60,10 +59,10 @@ typedef struct urtnet_buffer
 } uRTnet_buffer;
 
 /*
- * \brief Wiersz tabeli slotów (slots_table)
+ * \brief Configuration of one slot
  *
- *	Pojedyñczy wiersz zawiera informacjê o konfiguracji jednego
- *	slotu: jego phasing (a), period (b), oraz offset (w [ns]).
+ *	One slots_table_row contains information on one (owned) slot:
+ *	phasing (a), period (b) and offset ([ns]).
  */
 typedef struct s_slots_table_row
 {
@@ -73,89 +72,83 @@ typedef struct s_slots_table_row
 } slots_table_row;
 
 /*!
- * \brief Modu³ uRTnet
+ * \brief uRTnet module
  *
- * Zawiera wszystkie struktury danych potrzebne do dzia³ania uRTnet.
+ * Main structure for uRTnet.
  */
 typedef struct uRTnet_data
 {
 
 	/*!
-	 * \brief Status stosu
+	 * \brief uRTnet network stack status
 	 *
-	 * Interpretacja poszególnych bitów zmiennej:
-	 * 0- Stos jest w fazie inicjalizacji
-	 * 1- Stos jest w fazie kalibracji
-	 * 2- Stos czeka na odpowiedŸ na ¿¹danie kalibracji
+	 * Bits:
+	 * 0- initialization phase
+	 * 1- kalibration phase
+	 * 2- waiting for calibration reply
 	 */
 	uint8_t							uRTnetStatus;
 
 	/*!
-	 * \brief Bufor odbiorczy
+	 * \brief Receive buffer
 	 *
-	 * Zawiera w³asciwy bufor z danymi, rozmiar danych w buforze, oraz
-	 * status bufora (nie u¿ywany).
+	 * Contains actual data buffer, size of data in buffer and (not used) status.
 	 */
 	uRTnet_buffer					rx_buffer;
 
 	/*!
-	 * \brief Bufor nadawczy
+	 * \brief Transmit buffer
 	 *
-	 * Zawiera w³asciwy bufor z danymi, rozmiar danych w buforze, oraz
-	 * status bufora.
+	 * Contains actual data buffer, size of data in buffer and (not used) status.
 	 */
 	uRTnet_buffer					tx_buffer;
 
 	/*!
-	 * \brief W³asny adres MAC
+	 * \brief Microcontrollers own MAC adress
 	 */
 	MAC_addr_t						uC_MAC_Address;
 
 	/*!
-	 * \brief Czas przyjscia ostatniej ramki
+	 * \brief Last frame arrival time
 	 */
 	uint64_t						packet_arrival_time;
 
 	/*!
-	 * \brief Aktualny numer cyklu
+	 * \brief Current cycle number
 	 */
 	int32_t 						cycle_number;
 
 	/*!
-	 * \brief Aktualna pozycja w tabeli slotów
+	 * \brief Position in slots table
 	 *
-	 * Wartosc zmiennej to indeks nastêpnego slotu w tabeli slotów.
+	 * Value represents index of next slot in slots table.
 	 */
 	uint8_t 						slot_id;
 
 	/*!
-	 * \brief Tabela slotów
+	 * \brief Slots table
 	 *
-	 * Tabela slotów opisuje konfiguracje slotów przys³uguj¹cych
-	 * temu urz¹dzeniu. Mo¿na zmienic t¹ konfiguracjê modyfikuj¹c
-	 * t¹ tabelê, oraz jej rozmiar w funkcji tdma_init().
+	 * Contains slot configuration.
 	 */
 	slots_table_row					slots_table[CONF_max_slots_tab_size];
 
 	/*!
-	 * \brief Ilosc przypisanych slotow
-	 *
-	 * Liczba slotow przypisanych do tego urz¹dzenia.
+	 * \brief Number of owned slots
 	 */
 	uint8_t 						slots_table_size;
 
 	/*!
-	 * \brief Liczba przebytych cykli inicjalizacji
+	 * \brief Number of completed initialization cycles
 	 */
 	uint8_t							initialization_cycles_count;
 
 	/*!
-	 * \brief Liczba przebytych cykli kalibracji
+	 * \brief Number of completed calibration cycles
 	 */
 	uint8_t							calibration_cycles_count;
 
 	/*!
-	 * \brief Adres MAC tego urz¹dzenia.
+	 * \brief Master's MAC address.
 	 */
 	MAC_addr_t 						Masters_MAC_Address;
 
