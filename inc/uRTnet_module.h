@@ -153,65 +153,67 @@ typedef struct uRTnet_data
 	MAC_addr_t 						Masters_MAC_Address;
 
 	/*!
-	 * \brief Odstêp w cyklach do nades³ania odpowiedzi na ¿¹danie kalibracji
+	 * \brief Cycles to receiving calibration reply
 	 *
-	 * Liczba okresla ile cykli pozniej po wys³aniu ¿¹dania kalibracji ma przyjsc odpowiedz.
-	 * Przy wysy³aniu ¿¹dania kalibracji ta wartosc jest dodawana do aktualnego numeru cykl.
-	 * Wynik jest wpisywany do ramki ¿¹dania kalibracji.
+	 * Determines how many cycles later calibration request should be replied. When calibration
+	 * request is send, this value is added to actual cycle number. Result is number of cycle
+	 * in which calibration reply will come (master sends calibration reply in cycle specified by
+	 * result).
 	 */
 	uint32_t						cfg_reply_cycle_offset;
 
 	/*!
-	 * \brief Offset slotu w któym ma przyjsc odpowiedz na ¿¹danie kalibracji
+	 * \brief Specifies slot in which calibration reply should be sent.
 	 *
-     * Odstêp czasu od ramki synchronizacji po którym ma przyjsc odpowiedz na ¿¹danie
-     * kalibrajcji.
+     * Offset of slot in which master should sent calibration reply.
 	 */
 	uint64_t						cfg_reply_slot_offset;
 
 	/*!
-	 * \brief Zaplanowany czas wys³ania ramki synchronizacji
+	 * \brief Scheduled transmission time of synchronization frame
 	 *
-	 * Zaplanowany czas wys³ania ramki synchronizacji odczytany z ostatniej ramki synchronizacji
+	 * Scheduled transmission time of last received synchronization frame. Value is read
+	 * from synchronization frame and written in this field.
 	 */
 	uint64_t						tdma_trans_sched_time;
 
 	/*!
-	 * \brief Zmierzony czas wys³ania ramki synchronizacji
+	 * \brief Synchronization frame's time stamp
 	 *
-	 * Zmierzony czas wys³ania ramki synchronizacji odczytany z ostatniej ramki synchronizacji
+	 * Master measures transmission time of synchronization frame and writes result in that frame.
+	 * Upon receiving synchronization frame, the value is read and written in this field.
 	 */
 	uint64_t						tdma_trans_time_stamp;
 
 	/*!
-	 * \brief Ró¿nica miêdzy zegarem lokalnym, a globalnym
+	 * \brief Offset between local and global (master's) clock.
 	 */
 	int64_t							t_offset;
 
 	/*!
-	 * \brief Czas przesy³ania ramki
+	 * \brief Estimated transmission time.
 	 *
-	 * Czas przesy³ania ramki w nanosekundach. Uzyskiwany w czasie fazy kalibracji.
+	 * Estimated transmission time in nanoseconds. Computed during calibration phase.
 	 */
 	int64_t							t_trans;
 
 	/*!
-	 * \brief Czas wys³ania ramki
+	 * \brief Transmitted frame's time stamp
 	 */
 	uint64_t						packet_transmission_time;
 
 	/*!
-	 * \brief Adres wywo³ania zwrotnego, obs³uguj¹cego przyjscie danych
+	 * \brief Callback handling received data
 	 */
 	void							(*app_rx_callback)(uint8_t *data_buffer, uint32_t data_buffer_size);
 
 	/*!
-	 * \brief Adres wywo³ania zwrotnego, obs³uguj¹cego zwolnienie bufora
+	 * \brief Callback handling buffer ready
 	 */
 	void							(*app_tx_buf_rdy_callback)(void);
 
 	/*!
-	 * \brief Adres funkcji inicjalizuj¹cej timery
+	 * \brief Callback to HAL, handling timer initialization
 	 */
 	void 							(*hal_timers_init)(void);
 
